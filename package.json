@@ -8,13 +8,18 @@
     "generate": "iceworks generate",
     "sync": "iceworks sync",
     "lint": "npm run eslint && npm run stylelint",
-    "eslint": "eslint --cache --ext .js,.jsx ./",
+    "eslint": "eslint --cache --fix --ext .js,.jsx,.vue ./",
     "stylelint": "stylelint ./**/*.scss"
   },
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "devDependencies": {
     "@ice/spec": "^0.1.1",
+    "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/eslint-config-prettier": "^4.0.1",
     "eslint": "^6.0.1",
+    "eslint-plugin-vue": "^5.0.0",
     "stylelint": "^10.1.0"
   },
   "materialConfig": {

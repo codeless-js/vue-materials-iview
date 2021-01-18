@@ -22,6 +22,7 @@
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "dependencies": {
+    "iview": "^2.14.3",
     "vue": "^2.5.16"
   },
   "devDependencies": {
@@ -41,7 +42,7 @@
     },
     "extends": [
       "plugin:vue/essential",
-      "eslint:recommended"
+      "@vue/prettier"
     ],
     "rules": {},
     "parserOptions": {
