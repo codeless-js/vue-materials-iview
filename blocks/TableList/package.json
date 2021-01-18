@@ -1,6 +1,6 @@
 {
   "name": "@vue-materials-iview/table-list",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "包含crud功能的列表页",
   "files": [
     "src/",
