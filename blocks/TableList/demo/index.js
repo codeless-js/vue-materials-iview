@@ -7,5 +7,5 @@ Vue.config.productionTip = false;
 Vue.use(iView);
 
 new Vue({
-  render: (h) => h(Block),
+  render: h => h(Block),
 }).$mount('#vue-demo-layout');

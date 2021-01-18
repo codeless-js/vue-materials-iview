@@ -24,7 +24,7 @@ import routerConfig from './routerConfig';
 const routerMap = [];
 
 const recursiveRouterConfig = (config = []) => {
-  config.forEach((item) => {
+  config.forEach(item => {
     const route = {
       path: item.path,
       component: item.layout,

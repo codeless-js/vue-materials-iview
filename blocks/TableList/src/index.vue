@@ -26,21 +26,21 @@
     </div> -->
     <!--表单弹框-->
     <BasicFormModal
-    v-model="modals.basicForm"
-    :formType="modals.basicFormType"
-    :data="currentRow"
-    @on-submited="getTableData"
+      v-model="modals.basicForm"
+      :formType="modals.basicFormType"
+      :data="currentRow"
+      @on-submited="getTableData"
     ></BasicFormModal>
   </div>
 </template>
 
 <script>
-import response  from './index.json'
-import BasicFormModal from'./components/basic-form-modal.vue'
+import response from './index.json';
+import BasicFormModal from './components/basic-form-modal.vue';
 
 export default {
   components: {
-    BasicFormModal
+    BasicFormModal,
   },
   props: {},
   data() {
@@ -114,7 +114,7 @@ export default {
      * 获取表格数据
      */
     getTableData() {
-      this.tableData = response.data
+      this.tableData = response.data;
     },
     /**
      * 切换页面
@@ -149,20 +149,20 @@ export default {
     /**
      * 删除二次确认弹框
      */
-    confirmDeleteRow({id}) {
+    confirmDeleteRow({ id }) {
       this.$Modal.confirm({
         title: '删除',
         content: '确定删除此数据吗？',
         okType: 'error',
         onOk: () => {
-          this.deleteRow({id});
+          this.deleteRow({ id });
         },
       });
     },
     /**
      * 删除
      */
-    deleteRow({id}) {
+    deleteRow() {
       // 删除接口
       this.getTableData();
       this.$Message.success('删除成功');
