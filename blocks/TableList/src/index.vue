@@ -25,22 +25,22 @@
       ></Page>
     </div> -->
     <!--表单弹框-->
-    <BasicFormModal
+    <FormModal
       v-model="modals.basicForm"
       :formType="modals.basicFormType"
       :data="currentRow"
       @on-submited="getTableData"
-    ></BasicFormModal>
+    ></FormModal>
   </div>
 </template>
 
 <script>
 import response from './index.json';
-import BasicFormModal from './components/basic-form-modal.vue';
+import FormModal from './form-modal.vue';
 
 export default {
   components: {
-    BasicFormModal,
+    FormModal,
   },
   props: {},
   data() {
