@@ -1,0 +1,42 @@
+{
+  "name": "@vue-materials-iview/query-table",
+  "version": "0.1.0",
+  "description": "带查询和分页的列表,新建和编辑的弹框表单.",
+  "files": [
+    "src/!(style.d.ts)",
+    "src/",
+    "screenshot.png",
+    "config/",
+    "build/"
+  ],
+  "keywords": [
+    "ice",
+    "vue",
+    "page"
+  ],
+  "scripts": {
+    "start": "build-scripts start",
+    "build": "build-scripts build",
+    "screenshot": "screenshot -l",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@alib/build-scripts": "^0.1.8",
+    "@ice/screenshot": "^0.1.1",
+    "build-plugin-block": "^1.0.0",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "iview": "^2.14.3",
+    "vue": "^2.5.16"
+  },
+  "pageConfig": {
+    "name": "QueryTable",
+    "title": "Query Table",
+    "category": "Basic"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}

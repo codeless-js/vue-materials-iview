@@ -1,0 +1,60 @@
+{
+  "schema": {
+    "type": "object",
+    "x-component-props": {
+      "size": "medium",
+      "labelAlign": "left",
+      "labelTextAlign": "right",
+      "labelCol": 4,
+      "wrapperCol": 20
+    },
+    "properties": {
+      "dataSchema": {
+        "key": "dataSchema",
+        "x-component": "arraytable",
+        "type": "array",
+        "title": "数据列",
+        "x-component-props": {
+          "renderAddition": "添加",
+          "renderRemove": "删除",
+          "renderEmpty": "暂无数据"
+        },
+        "x-rules": [],
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "key": "title",
+              "x-component": "input",
+              "type": "string",
+              "title": "列标题",
+              "children": [],
+              "x-component-props": {
+                "placeholder": "",
+                "addonTextBefore": "",
+                "addonTextAfter": "",
+                "trim": true,
+                "hasClear": true
+              },
+              "x-rules": []
+            },
+            "field": {
+              "key": "field",
+              "x-component": "input",
+              "type": "string",
+              "title": "列字段",
+              "children": [],
+              "x-component-props": {
+                "placeholder": "",
+                "addonTextBefore": "",
+                "addonTextAfter": "",
+                "trim": true,
+                "hasClear": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
