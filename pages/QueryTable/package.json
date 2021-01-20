@@ -17,8 +17,7 @@
   "scripts": {
     "start": "build-scripts start",
     "build": "build-scripts build",
-    "screenshot": "screenshot -l",
-    "prepublishOnly": "npm run build && npm run screenshot"
+    "screenshot": "screenshot -l"
   },
   "dependencies": {},
   "devDependencies": {

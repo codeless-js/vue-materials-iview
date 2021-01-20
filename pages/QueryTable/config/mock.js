@@ -28,9 +28,5 @@ module.exports = {
       title: '状态',
       field: 'statusDesc',
     },
-    {
-      title: '操作',
-      field: 'action',
-    },
   ],
 };

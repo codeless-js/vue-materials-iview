@@ -59,22 +59,10 @@ export default {
       currentRow: {},
       // 表格结构
       columns: [
-        {
-          type: 'index',
-          width: 50,
-        },
-        {
-          title: '姓名',
-          key: 'name',
-        },
-        {
-          title: '年纪',
-          key: 'age',
-        },
-        {
-          title: '地址',
-          key: 'address',
-        },
+        {type: 'index',width: 50},
+        <% dataSchema.forEach(function(data){-%>
+        {title: '<%=data.title%>',key: '<%=data.field%>'},
+        <%})-%>
         {
           title: '操作',
           key: 'action',
