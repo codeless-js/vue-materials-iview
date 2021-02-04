@@ -1,10 +1,9 @@
 {
   "plugins": [
-    ["build-plugin-block",{
+    ["build-plugin-vue-iview",{
       "usingTemplate": true,
       "materialType": "page"
     }],
-    "build-plugin-fusion",
     ["build-plugin-moment-locales", {
       "locales": ["zh-cn"]
     }]

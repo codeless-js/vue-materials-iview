@@ -23,10 +23,8 @@
   "devDependencies": {
     "@alib/build-scripts": "^0.1.8",
     "@ice/screenshot": "^0.1.1",
-    "build-plugin-block": "^1.0.0",
-    "build-plugin-fusion": "^0.1.0",
     "build-plugin-moment-locales": "^0.1.0",
-    "iview": "^2.14.3",
+    "build-plugin-vue-iview": "^0.1.13",
     "vue": "^2.5.16"
   },
   "pageConfig": {
