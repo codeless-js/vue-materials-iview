@@ -1,6 +1,6 @@
 {
   "name": "@vue-materials-iview/query-table",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "带查询和分页的列表,新建和编辑的弹框表单.",
   "files": [
     "src/!(style.d.ts)",
