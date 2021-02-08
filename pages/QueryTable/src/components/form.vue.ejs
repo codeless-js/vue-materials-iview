@@ -1,9 +1,18 @@
 <template>
   <div>
     <i-form ref="form" :model="formData" :label-width="90" :rules="rules">
-      <FormItem label="场景名:" prop="name">
-        <i-input v-model="formData.name" placeholder="请输入场景名" />
-      </FormItem>
+<% formSchema.forEach(function(item){-%>
+        <FormItem label="<%=item.title%>" prop="<%=item.field%>">
+          <<%=item.component ? item.component : 'Input'%>
+            v-model="formData.<%=item.field%>"
+<% if (item.componentProps) { -%>
+<% item.componentProps.forEach(function(prop) {-%>
+            <%-prop.colon ? ':' : ''%><%-`${prop.key}="${prop.value}"`%>
+<% }) -%>
+<% } -%>
+           />
+        </FormItem>
+<%})-%>
     </i-form>
   </div>
 </template>
@@ -16,7 +25,9 @@
  */
 function initFormData () {
   return {
-    name: '',
+<% formSchema.forEach(function(item){-%>
+    <%-item.field%>:'',
+<%})-%>
   };
 };
 
@@ -42,9 +53,17 @@ export default {
       /* 模块列表 */
       moduleList: [],
       rules: {
-        name: [{ required: true, message: '场景名不能为空' }],
-        number: { pattern: /^\d*$/, message: '需为整数' },
-        apiList: [{ type: 'array', required: true, message: '不能为空', trigger: 'blur' }],
+<% formSchema.forEach(function(item){-%>
+<% if (item.rules) { -%>
+        <%-item.field%>:[
+<% item.rules.forEach(function(rule) {-%>
+          {<% Object.keys(rule).forEach(function(ruleKey) { -%>
+<%-rule[ruleKey] ? (`${ruleKey}:`+ (typeof rule[ruleKey] === 'string' ? `'${rule[ruleKey]}'`: rule[ruleKey]) + ',') : ''-%>
+<% }) -%>},
+<% }) -%>
+        ],
+<% } -%>
+<%})-%>
       },
     };
   },
@@ -66,8 +85,9 @@ export default {
       if (this.formType === 'add') {
         // 新增
         return addScene({
-          name: this.formData.name,
-          level: this.formData.level,
+<% formSchema.forEach(function(item){-%>
+          <%-item.field%>: this.formData.<%-item.field%>,
+<%})-%>
         }).then((response) => {
           this.$Message.success('创建成功');
           return response;
@@ -76,8 +96,9 @@ export default {
         // 更新
         return updateScene({
           id: this.formData.id,
-          name: this.formData.name,
-          level: this.formData.level,
+<% formSchema.forEach(function(item){-%>
+          <%-item.field%>: this.formData.<%-item.field%>,
+<%})-%>
         }).then((response) => {
           this.$Message.success('更新成功');
           return response;

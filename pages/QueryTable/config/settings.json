@@ -17,7 +17,9 @@
         "x-component-props": {
           "renderAddition": "添加",
           "renderRemove": "删除",
-          "renderEmpty": "暂无数据"
+          "renderEmpty": "暂无数据",
+          "allowMoveUp": true,
+          "allowMoveDown": true
         },
         "x-rules": [],
         "items": {
@@ -50,6 +52,214 @@
                 "addonTextAfter": "",
                 "trim": true,
                 "hasClear": true
+              }
+            }
+          }
+        }
+      },
+      "formSchema": {
+        "key": "formSchema",
+        "x-component": "ArrayCards",
+        "type": "array",
+        "title": "表单行",
+        "x-component-props": {
+          "renderAddition": "添加",
+          "renderRemove": "删除",
+          "renderEmpty": "暂无数据",
+          "allowMoveUp": true,
+          "allowMoveDown": true
+        },
+        "x-rules": [],
+        "items": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "key": "title",
+              "x-component": "input",
+              "type": "string",
+              "title": "标题",
+              "x-component-props": {
+                "placeholder": "",
+                "addonTextBefore": "",
+                "addonTextAfter": "",
+                "trim": true,
+                "hasClear": true
+              },
+              "x-rules": [],
+              "children": []
+            },
+            "field": {
+              "key": "field",
+              "x-component": "input",
+              "type": "string",
+              "title": "字段",
+              "x-component-props": {
+                "placeholder": "",
+                "addonTextBefore": "",
+                "addonTextAfter": "",
+                "trim": true,
+                "hasClear": true
+              },
+              "children": [],
+              "x-rules": []
+            },
+            "component": {
+              "key": "component",
+              "x-component": "select",
+              "type": "string",
+              "title": "输入控件",
+              "children": [],
+              "x-component-props": {
+                "placeholder": "",
+                "dataSource": [
+                  {
+                    "label": "输入框",
+                    "value": "Input"
+                  }
+                ],
+                "hasClear": true,
+                "useVirtual": false,
+                "filterLocal": false,
+                "showSearch": true
+              },
+              "x-rules": []
+            },
+            "componentProps": {
+              "key": "componentProps",
+              "x-component": "ArrayTable",
+              "type": "array",
+              "title": "输入控件属性",
+              "x-component-props": {
+                "renderAddition": "添加",
+                "renderRemove": "删除",
+                "renderEmpty": "暂无数据",
+                "size": "medium",
+                "labelAlign": "left"
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "key": "key",
+                    "x-component": "input",
+                    "type": "string",
+                    "title": "属性键",
+                    "x-component-props": {
+                      "placeholder": "",
+                      "addonTextBefore": "",
+                      "addonTextAfter": "",
+                      "trim": true,
+                      "hasClear": true
+                    },
+                    "x-rules": [],
+                    "children": []
+                  },
+                  "value": {
+                    "key": "value",
+                    "x-component": "input",
+                    "type": "string",
+                    "title": "属性值",
+                    "x-component-props": {
+                      "placeholder": "",
+                      "addonTextBefore": "",
+                      "addonTextAfter": "",
+                      "trim": true,
+                      "hasClear": true
+                    },
+                    "x-rules": [],
+                    "children": []
+                  },
+                  "colon": {
+                    "key": "colon",
+                    "x-component": "checkboxsingle",
+                    "type": "boolean",
+                    "title": "属性冒号",
+                    "x-component-props": {
+                      "placeholder": "",
+                      "addonTextBefore": "",
+                      "addonTextAfter": "",
+                      "trim": true,
+                      "hasClear": true
+                    },
+                    "x-rules": [],
+                    "children": []
+                  }
+                }
+              }
+            },
+            "rules": {
+              "key": "rules",
+              "x-component": "ArrayTable",
+              "type": "array",
+              "title": "校验",
+              "x-component-props": {
+                "renderAddition": "添加",
+                "renderRemove": "删除",
+                "renderEmpty": "该字段不校验"
+              },
+              "items": {
+                "type": "object",
+                "properties": {
+                  "required": {
+                    "key": "required",
+                    "x-component": "checkbox",
+                    "type": "boolean",
+                    "title": "必填"
+                  },
+                  "type": {
+                    "key": "type",
+                    "x-component": "select",
+                    "type": "string",
+                    "title": "类型",
+                    "enum": [
+                      {
+                        "value": "string",
+                        "label": "字符串"
+                      },
+                      {
+                        "value": "number",
+                        "label": "数字"
+                      },
+                      {
+                        "value": "array",
+                        "label": "数组"
+                      }
+                    ],
+                    "default": "string"
+                  },
+                  "message": {
+                    "key": "message",
+                    "x-component": "input",
+                    "type": "string",
+                    "title": "校验提示",
+                    "x-component-props": {
+                      "placeholder": "",
+                      "addonTextBefore": "",
+                      "addonTextAfter": "",
+                      "trim": true,
+                      "hasClear": true
+                    },
+                    "x-rules": [],
+                    "children": []
+                  },
+                  "trigger": {
+                    "key": "trigger",
+                    "x-component": "select",
+                    "type": "string",
+                    "title": "触发时机",
+                    "enum": [
+                      {
+                        "value": "",
+                        "label": "默认"
+                      },
+                      {
+                        "value": "blur",
+                        "label": "失焦"
+                      }
+                    ],
+                    "default": ""
+                  },
+                }
               }
             }
           }
