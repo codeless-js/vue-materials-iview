@@ -6,9 +6,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "screenshot": "../../node_modules/.bin/screenshot -l",
-    "prepublishOnly": "npm run build && npm run screenshot"
+    "lint": "vue-cli-service lint"
   },
   "files": [
     "mocks/",
@@ -46,25 +44,6 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.12"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -72,6 +51,9 @@
   ],
   "ideMode": {
     "name": "ice-vue"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scaffoldConfig": {
     "builder": "vue-cli-service",
