@@ -16,7 +16,7 @@
     "_editorconfig",
     "_eslintrc.js",
     "_gitignore",
-    "_httpmockrc.json",
+    ".httpmockrc.json",
     "babel.config.js",
     "postcss.config.js",
     "vue.config.js",
