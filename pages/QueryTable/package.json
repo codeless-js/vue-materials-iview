@@ -35,5 +35,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeless-js/vue-materials-iview/tree/master/pages/QueryTable"
+  }
 }

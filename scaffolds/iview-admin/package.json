@@ -1,7 +1,7 @@
 {
   "name": "@codeless-js/iview-admin",
   "version": "0.1.0",
-  "description": "后台管理前端工程,包含基本的工程封装,引入了iview组件库",
+  "description": "后台管理前端工程,内置基础的页面,路由,菜单和权限校验,引入了iview组件库",
   "author": "",
   "scripts": {
     "serve": "vue-cli-service serve",
