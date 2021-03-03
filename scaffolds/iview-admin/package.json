@@ -1,6 +1,6 @@
 {
   "name": "@codeless-js/iview-admin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "后台管理前端工程,内置基础的页面,路由,菜单和权限校验,引入了iview组件库",
   "author": "",
   "scripts": {
