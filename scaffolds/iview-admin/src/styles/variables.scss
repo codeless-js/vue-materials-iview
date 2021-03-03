@@ -1,0 +1,36 @@
+// layout
+$sidebarWidth:201px;
+$navHeight: 61px;
+
+// base color
+$errorColor: #ed3f14;
+$successColor: #19be6b;
+$warningColor: #ff9900;
+$darkPrimaryColor: #357FF1;
+$primaryColor: #1890ff;
+$lightPrimaryColor: #389DFB;
+$disabledColor: #CFCFCF;
+$layoutBgColor: #F5F6FA;
+
+// Border color
+$borderColorPage: #e5e9f2;
+$borderColorSplit: #e8e8e8;
+$borderColorCard: #E4E7ED;
+
+// Background color
+$table-thead-bg: #fbfbfb;
+
+$subColor: #8c8c8c;
+$hoverColor: #EBF2FD;
+$activedColor: #357FF1;
+$subActionColor: #90A4AE;
+
+$borderRadiusBase: 4px;
+
+// shadown
+$shadowColor: rgba(0,0,0,.03);
+$shadowBase: 0 1px 2px 0 $shadowColor;
+
+@mixin background-image($image1x, $image2x) {
+  background-image: image-set($image1x 1x, $image2x 2x);
+}

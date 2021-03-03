@@ -4,33 +4,47 @@
   "description": "后台管理前端工程,包含基本的工程封装,引入了iview组件库",
   "author": "",
   "scripts": {
-    "start": "vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "screenshot": "screenshot -l",
+    "screenshot": "../../node_modules/.bin/screenshot -l",
     "prepublishOnly": "npm run build && npm run screenshot"
   },
   "files": [
-    "src/",
-    "build/",
+    "mocks/",
     "public/",
+    "scripts/",
+    "src/",
+    "_editorconfig",
+    "_eslintrc.js",
+    "_gitignore",
+    "_httpmockrc.json",
+    "babel.config.js",
+    "postcss.config.js",
+    "vue.config.js",
     "screenshot.png"
   ],
   "dependencies": {
-    "vue": "^2.6.6",
-    "vue-router": "^3.0.2"
+    "axios": "^0.21.1",
+    "view-design": "^4.5.0",
+    "vue": "^2.6.12",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "@ice/screenshot": "^0.1.1",
-    "@vue/cli-plugin-babel": "^3.4.0",
-    "@vue/cli-plugin-eslint": "^3.4.0",
-    "@vue/cli-service": "^3.4.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "babel-eslint": "^10.1.0",
+    "chalk": "^2.3.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.11.0",
+    "http-mockjs": "^4.6.2",
+    "lint-staged": "^8.1.5",
+    "node-sass": "^4.14.1",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
@@ -62,6 +76,11 @@
   "scaffoldConfig": {
     "builder": "vue-cli-service",
     "name": "Iview Admin",
-    "title": "Iview Admin"
+    "title": "Iview Admin",
+    "category": "Basic"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeless-js/vue-materials-iview/tree/master/scaffolds/iview-admin"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "msg": "OK",
+  "data": {
+    "id": 13,
+    "fullname": "@name()",
+    "email": "@email()",
+    "phoneNum": "",
+    "role": "editor",
+    "avatar": "https://secure.gravatar.com/avatar/1fcf3a37940d48ccaf540baeda71c3d4?d=identicon"
+  }
+}

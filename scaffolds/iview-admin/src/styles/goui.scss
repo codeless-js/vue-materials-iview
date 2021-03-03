@@ -1,0 +1,96 @@
+/* 表格 */
+// 无外边框的表格
+.no-outside-border.ivu-table-wrapper {
+  border: none;
+}
+.no-outside-border > .ivu-table:after {
+  width: 0;
+}
+.table-td--10_0 {
+  padding: 10px 0;
+}
+/* 表格时间 */
+.table-td-time .ivu-table-cell {
+  word-break: break-word;
+}
+
+/* 无边框的input */
+.m-input-no_border {
+  .ivu-input {
+    border-color: transparent;
+    background-color: transparent;
+    &:hover {
+      border: 1px solid #dddee1;
+      background-color: #FFFFFF;
+    }
+    &:focus {
+      border: 1px solid #57a3f3;
+      background-color: #FFFFFF;
+    }
+  }
+}
+/* 加大的input */
+.title-name_input {
+  .ivu-input {
+    font-size: 20px;
+    color: #131D37;
+    line-height: 20px;
+    padding: 4px 0px;
+    font-weight: bold;
+    text-overflow: ellipsis;
+  }
+}
+/*无边框选择框*/
+.m-select-no_border {
+  .ivu-select-selection {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  .ivu-select-arrow{
+    color: transparent;
+  }
+  .ivu-select-selection:hover {
+    border-color: #dddee1;
+    background-color: #FFFFFF;
+    .ivu-select-arrow{
+      color: #80848f;
+    }
+  }
+  .ivu-select-selection:focus {
+    border-color: 1px solid #dddee1;
+    background-color: #FFFFFF;
+    .ivu-select-arrow{
+      color: #80848f;
+    }
+  }
+  &.ivu-select-visible {
+    background-color: #FFFFFF;
+    .ivu-select-selection {
+      border-color: #57a3f3;
+    }
+    .ivu-select-arrow{
+      color: #80848f;
+    }
+  }
+}
+/* 内容限高的modal */
+.modal--max-height .ivu-modal-body {
+  max-height: 500px;
+  overflow-y: auto;
+}
+/* 内容限高的modal */
+.modal--no-padding .ivu-modal-body {
+    padding: 0;
+}
+/* 限高的poptip */
+.poptip--max-height .ivu-poptip-body {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.poptip--max-width  .ivu-poptip-body {
+  max-width: 300px;
+}
+/* 设置整体的宽度 */
+.poptip--width-100, .poptip--width-100 .ivu-poptip-rel {
+  width: 100%;
+}

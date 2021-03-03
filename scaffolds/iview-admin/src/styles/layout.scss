@@ -1,0 +1,31 @@
+
+.g-wrap {
+  position: relative;
+  display: flex;
+  min-width: 1200px;
+  min-height: 600px;
+  height:100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+.g-left {
+  height: 100%;
+  flex: 0 0 $sidebarWidth;
+  display: flex;
+  flex-direction: column;
+}
+.g-right {
+  flex: 1 1 auto;
+  transition: margin-left .28s;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+.g-right_top {
+  flex: 0 0 $navHeight;
+}
+.g-app-main {
+  flex: 1;
+  position: relative;
+  overflow-y: auto;
+}

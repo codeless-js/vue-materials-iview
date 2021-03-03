@@ -1,0 +1,57 @@
+/* 表格的操作列 */
+.table_action> * {
+  vertical-align: middle;
+  margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+/*可点击文字*/
+.clickable {
+  color: $primaryColor;
+  cursor: pointer;
+  &:hover {
+    color: $lightPrimaryColor;
+  }
+}
+.clickable--error {
+  color: $errorColor;
+  cursor: pointer;
+}
+
+/*分页*/
+.m-page {
+  overflow: hidden;
+  padding: 12px;
+}
+
+/* 公共的带边框的容器样式，可用于列表页 */
+.m-container {
+  background: #fff;
+  border: 1px solid $borderColorPage;
+  box-shadow: $shadowBase;
+  border-radius: $borderRadiusBase;
+}
+/* 公共的列表页容器样式 */
+.m-view--list {
+  min-height: calc(100% - 40px);
+  position: relative;
+  margin: 20px;
+}
+/* 分割线 */
+.split-line {
+  position: relative;
+  width: 1px;
+  height: 16px;
+  margin-right: 10px !important;
+  &:after {
+   content: "";
+   display: block;
+   width: 1px;
+   height: 16px;
+   background: #E8E8E8;
+   position: absolute;
+   top: 0;
+   right: 0;
+ }
+}

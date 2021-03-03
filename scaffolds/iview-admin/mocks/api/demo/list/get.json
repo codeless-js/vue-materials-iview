@@ -1,0 +1,18 @@
+{
+  "code": 200,
+  "msg": "OK",
+  "data": {
+    "items": [{
+      "id": 1,
+      "name": "@name()"
+    },
+    {
+      "id": 2,
+      "name": "@name()"
+    }],
+    "pageInfo": {
+      "page":1,
+      "total": 20
+    }
+  }
+}

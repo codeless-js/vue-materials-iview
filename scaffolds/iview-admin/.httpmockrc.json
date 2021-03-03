@@ -1,0 +1,13 @@
+{
+    "mockFileName": "mocks",
+    "routes": {
+        "GET /api/user/info": {
+            "path": "/api/user/info/get.json",
+            "ignore": false
+        },
+        "GET /api/demo/list": {
+            "path": "/api/demo/list/get.json",
+            "ignore": false
+        }
+    }
+}
