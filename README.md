@@ -1,5 +1,7 @@
 # Custom ICE Materials
 
+物料源地址：https://unpkg.com/@codeless-js/vue-materials-iview@latest/build/materials.json
+
 [Docs](https://ice.work/docs/materials/about).
 
 ## Install iceworks
