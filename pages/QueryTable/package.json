@@ -15,18 +15,12 @@
     "page"
   ],
   "scripts": {
-    "start": "build-scripts start",
-    "build": "build-scripts build",
-    "screenshot": "screenshot -l"
+    "start": "../../node_modules/.bin/build-scripts start",
+    "build": "../../node_modules/.bin/build-scripts build",
+    "screenshot": "../../node_modules/.bin/screenshot -l"
   },
   "dependencies": {},
-  "devDependencies": {
-    "@alib/build-scripts": "^0.1.8",
-    "@ice/screenshot": "^0.1.1",
-    "build-plugin-moment-locales": "^0.1.0",
-    "build-plugin-vue-iview": "^0.1.13",
-    "vue": "^2.5.16"
-  },
+  "devDependencies": {},
   "pageConfig": {
     "name": "QueryTable",
     "title": "Query Table",

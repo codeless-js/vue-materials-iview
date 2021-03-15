@@ -15,12 +15,17 @@
     "build"
   ],
   "devDependencies": {
+    "@alib/build-scripts": "^0.1.8",
+    "@ice/screenshot": "^0.1.1",
     "@ice/spec": "^0.1.1",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/eslint-config-prettier": "^4.0.1",
+    "build-plugin-moment-locales": "^0.1.0",
+    "build-plugin-vue-iview": "^0.1.13",
     "eslint": "^6.0.1",
     "eslint-plugin-vue": "^5.0.0",
-    "stylelint": "^10.1.0"
+    "stylelint": "^13.12.0",
+    "vue": "^2.6.12"
   },
   "materialConfig": {
     "template": "@icedesign/ice-vue-material-template",
