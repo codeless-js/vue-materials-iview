@@ -1,4 +1,8 @@
 module.exports = {
+  development: false,
+  pageNameLower: 'scene1',
+  pageNameUpper: 'Scene1',
+  filterKeywordKey: 'keyword',
   dataSchema: [
     {
       title: '名称',

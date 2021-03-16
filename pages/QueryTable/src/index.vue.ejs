@@ -1,7 +1,16 @@
 <template>
   <div class="m-container m-view--list">
-    <div>
+    <ActionBlock>
+      <template v-slot:normal>
       <i-button type="primary" @click="showAddModal">创建</i-button>
+      </template>
+<% if (filterKeywordKey) { -%>
+      <template v-slot:search>
+        <Search v-model="filterData.<%= filterKeywordKey %>" style="width: 200px;" @on-search="onSearch"></Search>
+      </template>
+<% } -%>
+    </ActionBlock>
+    <div>
     </div>
     <div>
       <i-table
@@ -35,17 +44,37 @@
 </template>
 
 <script>
-import response from './index.json';
+
+<% if (development) { -%>
+import response from '../config/api-get-list.json';
+<% } -%>
+<% if (!development) { -%>
+import { get<%= pageNameUpper %>List } from '@/api/<%= pageNameLower %>';
+<% } -%>
 import FormModal from './components/form-modal.vue';
+import ActionBlock from '@vue-materials-iview/action-block';
+<% if (filterKeywordKey) { -%>
+import Search from '@vue-materials-iview/search';
+<% } -%>
 
 export default {
   components: {
     FormModal,
+    ActionBlock,
+<% if (filterKeywordKey) { -%>
+    Search,
+<% } -%>
   },
   props: {},
   data() {
     return {
       tableData: [],
+      /*过滤*/
+      filterData: {
+<% if (filterKeywordKey) { -%>
+        <%= filterKeywordKey %>: '',
+<% } -%>
+      },
       /* 分页信息 */
       pageInfo: {
         page: 1,
@@ -102,7 +131,24 @@ export default {
      * 获取表格数据
      */
     getTableData() {
+<% if (development) { -%>
       this.tableData = response.data;
+<% } -%>
+<% if (!development) { -%>
+      get<%= pageNameUpper %>List({
+        projectId: this.$projectId,
+<% if (filterKeywordKey) { -%>
+        <%= filterKeywordKey %>: this.filterData.<%= filterKeywordKey %>,
+<% } -%>
+        page: this.pageInfo.page,
+        pageSize: this.pageInfo.pageSize,
+      }).then(response => {
+        this.tableData = response.data.items || [];
+        // 更新分页信息
+        this.pageInfo.total = response.data.pageInfo.total;
+        this.pageInfo.page = response.data.pageInfo.page;
+      });
+<% } -%>
     },
     /**
      * 切换页面

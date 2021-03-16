@@ -19,7 +19,10 @@
     "build": "../../node_modules/.bin/build-scripts build",
     "screenshot": "../../node_modules/.bin/screenshot -l"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@vue-materials-iview/action-block": "^1.0.0",
+    "@vue-materials-iview/search": "^1.0.0"
+  },
   "devDependencies": {},
   "pageConfig": {
     "name": "QueryTable",

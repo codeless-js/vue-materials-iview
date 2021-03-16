@@ -18,8 +18,10 @@
 </template>
 
 <script>
+<% if (!development) { -%>
 // 接口
-// import { addScene, updateScene } from '@/api/scene';
+import { add<%= pageNameUpper %>, update<%= pageNameUpper %> } from '@/api/<%= pageNameLower %>';
+<% } -%>
 /**
  * 初始化表单
  */
@@ -50,8 +52,6 @@ export default {
     }
     return {
       formData: formData,
-      /* 模块列表 */
-      moduleList: [],
       rules: {
 <% formSchema.forEach(function(item){-%>
 <% if (item.rules) { -%>
@@ -84,7 +84,7 @@ export default {
     submitForm() {
       if (this.formType === 'add') {
         // 新增
-        return addScene({
+        return add<%= pageNameUpper %>({
 <% formSchema.forEach(function(item){-%>
           <%-item.field%>: this.formData.<%-item.field%>,
 <%})-%>
@@ -94,7 +94,7 @@ export default {
         });
       } else {
         // 更新
-        return updateScene({
+        return update<%= pageNameUpper %>({
           id: this.formData.id,
 <% formSchema.forEach(function(item){-%>
           <%-item.field%>: this.formData.<%-item.field%>,

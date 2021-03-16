@@ -3,17 +3,62 @@
     "type": "object",
     "x-component-props": {
       "size": "medium",
-      "labelAlign": "left",
+      "labelAlign": "top",
       "labelTextAlign": "right",
       "labelCol": 4,
       "wrapperCol": 20
     },
     "properties": {
+      "pageNameLower": {
+        "key": "pageNameLower",
+        "x-component": "input",
+        "type": "string",
+        "title": "模块名(用于方法的取名，请输入小驼峰式单词）",
+        "x-component-props": {
+          "placeholder": "",
+          "addonTextBefore": "",
+          "addonTextAfter": "",
+          "trim": true,
+          "hasClear": true
+        },
+        "x-rules": [],
+        "default": "scene"
+      },
+      "pageNameUpper": {
+        "key": "pageNameUpper",
+        "x-component": "input",
+        "type": "string",
+        "title": "模块名(用于方法的取名，请输入大驼峰式单词）",
+        "x-component-props": {
+          "placeholder": "",
+          "addonTextBefore": "",
+          "addonTextAfter": "",
+          "trim": true,
+          "hasClear": true
+        },
+        "x-rules": [],
+        "default": "Scene"
+      },
+      "filterKeywordKey": {
+        "key": "filterKeywordKey",
+        "x-component": "input",
+        "type": "string",
+        "title": "表格关键字搜索(置空即关闭该功能）",
+        "x-component-props": {
+          "placeholder": "",
+          "addonTextBefore": "",
+          "addonTextAfter": "",
+          "trim": true,
+          "hasClear": true
+        },
+        "x-rules": [],
+        "default": "keyword"
+      },
       "dataSchema": {
         "key": "dataSchema",
         "x-component": "arraytable",
         "type": "array",
-        "title": "数据列",
+        "title": "表格数据列",
         "x-component-props": {
           "renderAddition": "添加",
           "renderRemove": "删除",
@@ -61,7 +106,7 @@
         "key": "formSchema",
         "x-component": "ArrayCards",
         "type": "array",
-        "title": "表单行",
+        "title": "添加&编辑表单",
         "x-component-props": {
           "renderAddition": "添加",
           "renderRemove": "删除",
@@ -77,7 +122,7 @@
               "key": "title",
               "x-component": "input",
               "type": "string",
-              "title": "标题",
+              "title": "字段标题",
               "x-component-props": {
                 "placeholder": "",
                 "addonTextBefore": "",
@@ -92,7 +137,7 @@
               "key": "field",
               "x-component": "input",
               "type": "string",
-              "title": "字段",
+              "title": "字段key",
               "x-component-props": {
                 "placeholder": "",
                 "addonTextBefore": "",
@@ -107,7 +152,7 @@
               "key": "component",
               "x-component": "select",
               "type": "string",
-              "title": "输入控件",
+              "title": "输入控件的类型",
               "children": [],
               "x-component-props": {
                 "placeholder": "",
@@ -128,7 +173,7 @@
               "key": "componentProps",
               "x-component": "ArrayTable",
               "type": "array",
-              "title": "输入控件属性",
+              "title": "输入控件的属性",
               "x-component-props": {
                 "renderAddition": "添加",
                 "renderRemove": "删除",
@@ -171,9 +216,9 @@
                   },
                   "colon": {
                     "key": "colon",
-                    "x-component": "checkboxsingle",
+                    "x-component": "checkbox",
                     "type": "boolean",
-                    "title": "属性冒号",
+                    "title": "属性值是否为变量",
                     "x-component-props": {
                       "placeholder": "",
                       "addonTextBefore": "",
@@ -185,13 +230,20 @@
                     "children": []
                   }
                 }
-              }
+              },
+              "default": [
+                {
+                  "key":"placeholder",
+                  "value": "请输入",
+                  "colon": false
+                }
+              ]
             },
             "rules": {
               "key": "rules",
               "x-component": "ArrayTable",
               "type": "array",
-              "title": "校验",
+              "title": "字段值的校验",
               "x-component-props": {
                 "renderAddition": "添加",
                 "renderRemove": "删除",
@@ -204,7 +256,7 @@
                     "key": "required",
                     "x-component": "checkbox",
                     "type": "boolean",
-                    "title": "必填"
+                    "title": "是否必填"
                   },
                   "type": {
                     "key": "type",
