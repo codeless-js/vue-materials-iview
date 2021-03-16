@@ -1,6 +1,6 @@
 {
   "name": "@vue-materials-iview/query-table",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "带查询和分页的列表,新建和编辑的弹框表单.",
   "files": [
     "src/!(style.d.ts)",
@@ -17,7 +17,8 @@
   "scripts": {
     "start": "../../node_modules/.bin/build-scripts start",
     "build": "../../node_modules/.bin/build-scripts build",
-    "screenshot": "../../node_modules/.bin/screenshot -l"
+    "screenshot": "../../node_modules/.bin/screenshot -l",
+    "prepublishOnly": "npm run build && npm run screenshot"
   },
   "dependencies": {
     "@vue-materials-iview/action-block": "^1.0.0",
