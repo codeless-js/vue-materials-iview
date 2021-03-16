@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    ["build-plugin-vue-iview",{
+      "usingTemplate": true,
+      "materialType": "page"
+    }],
+    ["build-plugin-moment-locales", {
+      "locales": ["zh-cn"]
+    }]
+  ]
+}

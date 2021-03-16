@@ -1,0 +1,37 @@
+{
+  "name": "@vue-materials-iview/search",
+  "version": "1.0.0",
+  "description": "带搜索按钮的输入框组件",
+  "files": [
+    "demo/",
+    "src/",
+    "build/"
+  ],
+  "main": "src/index.vue",
+  "scripts": {
+    "start": "../../node_modules/.bin/build-scripts start",
+    "build": "../../node_modules/.bin/build-scripts build",
+    "screenshot": "../../node_modules/.bin/screenshot -l",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "vue",
+    "component",
+    "container"
+  ],
+  "componentConfig": {
+    "name": "QueryTable",
+    "title": "Query Table",
+    "category": "Basic"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeless-js/vue-materials-iview/tree/master/components/Search"
+  }
+}
