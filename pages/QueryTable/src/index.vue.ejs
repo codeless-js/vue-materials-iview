@@ -49,7 +49,7 @@
 import response from '../config/api-get-list.json';
 <% } -%>
 <% if (!development) { -%>
-import { get<%= pageNameUpper %>List } from '@/api/<%= pageNameLower %>';
+import { get<%= moduleNameUpper %>List } from '@/api/<%= moduleNameLower %>';
 <% } -%>
 import FormModal from './components/form-modal.vue';
 import ActionBlock from '@vue-materials-iview/action-block';
@@ -135,7 +135,7 @@ export default {
       this.tableData = response.data;
 <% } -%>
 <% if (!development) { -%>
-      get<%= pageNameUpper %>List({
+      get<%= moduleNameUpper %>List({
         projectId: this.$projectId,
 <% if (filterKeywordKey) { -%>
         <%= filterKeywordKey %>: this.filterData.<%= filterKeywordKey %>,

@@ -1,7 +1,8 @@
 module.exports = {
   development: true,
-  pageNameLower: 'scene1',
-  pageNameUpper: 'Scene1',
+  moduleNameLower: 'scene',
+  moduleNameUpper: 'Scene',
+  pageNameUpper: 'SceneList',
   filterKeywordKey: '',
   dataSchema: [
     {

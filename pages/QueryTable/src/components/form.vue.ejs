@@ -20,7 +20,7 @@
 <script>
 <% if (!development) { -%>
 // 接口
-import { add<%= pageNameUpper %>, update<%= pageNameUpper %> } from '@/api/<%= pageNameLower %>';
+import { add<%= moduleNameUpper %>, update<%= moduleNameUpper %> } from '@/api/<%= moduleNameLower %>';
 <% } -%>
 /**
  * 初始化表单
@@ -84,7 +84,7 @@ export default {
     submitForm() {
       if (this.formType === 'add') {
         // 新增
-        return add<%= pageNameUpper %>({
+        return add<%= moduleNameUpper %>({
 <% formSchema.forEach(function(item){-%>
           <%-item.field%>: this.formData.<%-item.field%>,
 <%})-%>
@@ -94,7 +94,7 @@ export default {
         });
       } else {
         // 更新
-        return update<%= pageNameUpper %>({
+        return update<%= moduleNameUpper %>({
           id: this.formData.id,
 <% formSchema.forEach(function(item){-%>
           <%-item.field%>: this.formData.<%-item.field%>,

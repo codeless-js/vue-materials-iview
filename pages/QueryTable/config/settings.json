@@ -9,8 +9,8 @@
       "wrapperCol": 20
     },
     "properties": {
-      "pageNameLower": {
-        "key": "pageNameLower",
+      "moduleNameLower": {
+        "key": "moduleNameLower",
         "x-component": "input",
         "type": "string",
         "title": "模块名(用于方法的取名，请输入小驼峰式单词）",
@@ -22,10 +22,10 @@
           "hasClear": true
         },
         "x-rules": [],
-        "default": "scene"
+        "default": "demo"
       },
-      "pageNameUpper": {
-        "key": "pageNameUpper",
+      "moduleNameUpper": {
+        "key": "moduleNameUpper",
         "x-component": "input",
         "type": "string",
         "title": "模块名(用于方法的取名，请输入大驼峰式单词）",
@@ -37,7 +37,22 @@
           "hasClear": true
         },
         "x-rules": [],
-        "default": "Scene"
+        "default": "Demo"
+      },
+      "pageNameUpper": {
+        "key": "pageNameUpper",
+        "x-component": "input",
+        "type": "string",
+        "title": "页面名(请输入大驼峰式单词，生成时会再填一次，请保持一致）",
+        "x-component-props": {
+          "placeholder": "",
+          "addonTextBefore": "",
+          "addonTextAfter": "",
+          "trim": true,
+          "hasClear": true
+        },
+        "x-rules": [],
+        "default": "DemoList"
       },
       "filterKeywordKey": {
         "key": "filterKeywordKey",
@@ -316,6 +331,21 @@
             }
           }
         }
+      },
+      "development": {
+        "key": "development",
+        "x-component": "checkbox",
+        "type": "boolean",
+        "title": "物料开发（忽略）",
+        "x-component-props": {
+          "placeholder": "",
+          "addonTextBefore": "",
+          "addonTextAfter": "",
+          "trim": true,
+          "hasClear": true
+        },
+        "x-rules": [],
+        "default": false
       }
     }
   }

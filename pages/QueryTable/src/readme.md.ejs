@@ -1,66 +1,66 @@
 按照下面步骤完成后续代码后删掉本readme
 
 ### 接口文件
-新建文件`src/api/<%= pageNameLower %>.js` 内容如下：
+新建文件`src/api/<%= moduleNameLower %>.js` 内容如下：
 ```
 import request from './base.js';
 
-export function get<%= pageNameUpper %>List(params) {
-  return request.get('/api/<%= pageNameLower %>/list', { params })
+export function get<%= moduleNameUpper %>List(params) {
+  return request.get('/api/<%= moduleNameLower %>/list', { params })
   .then(response => {
     const data = response.data.items || [];
-    response.data.items = data.map(function(<%= pageNameLower %>Item) {
-      <%= pageNameLower %>Item.apiList = <%= pageNameLower %>Item.apiList || [];
-      <%= pageNameLower %>Item.apiDetailList = <%= pageNameLower %>Item.apiList.map(apiItem => {
+    response.data.items = data.map(function(<%= moduleNameLower %>Item) {
+      <%= moduleNameLower %>Item.apiList = <%= moduleNameLower %>Item.apiList || [];
+      <%= moduleNameLower %>Item.apiDetailList = <%= moduleNameLower %>Item.apiList.map(apiItem => {
         return { name: apiItem };
       });
-      return <%= pageNameLower %>Item;
+      return <%= moduleNameLower %>Item;
     });
   return response;
   })
 }
-export function get<%= pageNameUpper %>Info(params) {
-  return request.get('/api/<%= pageNameLower %>/info', { params });
+export function get<%= moduleNameUpper %>Info(params) {
+  return request.get('/api/<%= moduleNameLower %>/info', { params });
 }
-export function add<%= pageNameUpper %>(params) {
-  return request.post('/api/<%= pageNameLower %>/add', params);
+export function add<%= moduleNameUpper %>(params) {
+  return request.post('/api/<%= moduleNameLower %>/add', params);
 }
-export function update<%= pageNameUpper %>(params) {
-  return request.post('/api/<%= pageNameLower %>/update', params);
+export function update<%= moduleNameUpper %>(params) {
+  return request.post('/api/<%= moduleNameLower %>/update', params);
 }
-export function delete<%= pageNameUpper %>(params) {
-  return request.delete('/api/<%= pageNameLower %>/delete', { params });
+export function delete<%= moduleNameUpper %>(params) {
+  return request.delete('/api/<%= moduleNameLower %>/delete', { params });
 }
 
 ```
 
 ### 路由文件
-新建文件`src/router/modules/<%= pageNameLower %>.js`内容如下：
+新建文件`src/router/modules/<%= moduleNameLower %>.js`内容如下：
 ```
 import Layout from '@/layout';
 
-const <%= pageNameLower %>Router = {
-  path: '/<%= pageNameLower %>',
+const <%= moduleNameLower %>Router = {
+  path: '/<%= moduleNameLower %>',
   component: Layout,
-  redirect: '/<%= pageNameLower %>/list',
-  name: '<%= pageNameLower %>',
+  redirect: '/<%= moduleNameLower %>/list',
+  name: '<%= moduleNameLower %>',
   children: [
     {
       path: 'list',
-      component: () => import(/* webpackChunkName: "<%= pageNameLower %>-list" */ '@/pages/<%= pageNameLower %>-list/index.vue'),
-      name: '<%= pageNameLower %>-list',
+      component: () => import(/* webpackChunkName: "<%= pageNameUpper %>" */ '@/pages/<%= pageNameUpper %>/index.vue'),
+      name: '<%= moduleNameLower %>-list',
       meta: { title: '列表', icon: 'android-alarm-clock' },
     },
   ],
 };
-export default <%= pageNameLower %>Router;
+export default <%= moduleNameLower %>Router;
 ```
 
 更改`src/router/index.js`
 ```
-import <%= pageNameLower %>Router from './modules/<%= pageNameLower %>';  // 添加该行
+import <%= moduleNameLower %>Router from './modules/<%= moduleNameLower %>';  // 添加该行
 
-export const asyncRoutes = [<%= pageNameLower %>Router];   // 该数组增加该变量
+export const asyncRoutes = [<%= moduleNameLower %>Router];   // 该数组增加该变量
 ```
 
 ### 菜单配置
@@ -70,7 +70,7 @@ export const asyncRoutes = [<%= pageNameLower %>Router];   // 该数组增加该
 ```
 export const constantMenu = [
   {
-    name: '<%= pageNameLower %>-list',
+    name: '<%= moduleNameLower %>-list',
     meta: {
       icon: 'briefcase',
       title: '列表',
@@ -84,13 +84,13 @@ export const constantMenu = [
 更改`.httpmockrc.json`, 在routes中增加
 
 ```
-"GET /api/<%= pageNameLower %>/list": {
-    "path": "/api/<%= pageNameLower %>/list/get.json",
+"GET /api/<%= moduleNameLower %>/list": {
+    "path": "/api/<%= moduleNameLower %>/list/get.json",
     "ignore": false
 }
 ```
 
-增加文件`mocks/api/<%= pageNameLower %>/list/get.json` 内容如下：
+增加文件`mocks/api/<%= moduleNameLower %>/list/get.json` 内容如下：
 
 ```
 {
