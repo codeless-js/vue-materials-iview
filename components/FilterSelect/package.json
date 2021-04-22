@@ -1,0 +1,37 @@
+{
+  "name": "@vue-materials-iview/filter-select",
+  "version": "1.0.0",
+  "description": "可直接传接口方法的远程搜索的选择框组件",
+  "files": [
+    "demo/",
+    "src/",
+    "build/"
+  ],
+  "main": "src/index.vue",
+  "scripts": {
+    "start": "../../node_modules/.bin/build-scripts start",
+    "build": "../../node_modules/.bin/build-scripts build",
+    "screenshot": "../../node_modules/.bin/screenshot -l",
+    "prepublishOnly": "npm run build && npm run screenshot"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ice",
+    "vue",
+    "component",
+    "container"
+  ],
+  "componentConfig": {
+    "name": "FilterSelect",
+    "title": "Filter Select",
+    "category": "Form"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "http://registry.npmjs.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeless-js/vue-materials-iview/tree/master/components/FilterSelect"
+  }
+}
