@@ -1,24 +1,37 @@
 <template>
   <i-select
     v-bind="$attrs"
-    filterable
+    :filterable="filterable"
     :remote="remote"
     :remote-method="remoteMethod"
     :loading="loading"
     v-on="$listeners"
   >
-    <i-option v-for="item in optionList" :value="item[valueKey]" :key="item.value">{{
-      item[labelKey]
-    }}</i-option>
+    <i-option
+      v-for="item in optionList"
+      :value="item[valueKey]"
+      :key="item.value"
+      :label="item[labelKey]"
+    >
+      <slot v-bind:option="item">
+        <span>{{ item[labelKey] }}</span>
+      </slot>
+    </i-option>
   </i-select>
 </template>
 
 <script>
+import isEqual from 'lodash/isEqual';
 export default {
   components: {},
   props: {
+    filterable: {
+      type: Boolean,
+      default: true,
+    },
     filterApi: Function,
     isPage: { type: Boolean, default: true }, //是否分页
+    remote: { type: Boolean, default: true }, //是否远程搜索
     valueKey: {
       type: String,
       default: 'value',
@@ -26,6 +39,10 @@ export default {
     labelKey: {
       type: String,
       default: 'label',
+    },
+    queryKey: {
+      type: String,
+      default: 'searchKey',
     },
     apiParams: {
       type: Object,
@@ -40,12 +57,13 @@ export default {
       optionList: [],
     };
   },
-  computed: {
-    remote() {
-      return this.isPage;
+  computed: {},
+  watch: {
+    apiParams(newValue, oldValue) {
+      if (isEqual(newValue, oldValue)) return;
+      this.remoteMethod();
     },
   },
-  watch: {},
   created() {
     this.remoteMethod();
   },
@@ -55,8 +73,8 @@ export default {
       this.loading = true;
       this.filterApi &&
         this.filterApi({
-          productId: this.$productId,
-          searchKey: query,
+          projectId: this.$projectId,
+          [this.queryKey]: query,
           pageSize: 20,
           pageNum: 1,
           ...this.apiParams,

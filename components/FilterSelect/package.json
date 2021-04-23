@@ -1,6 +1,6 @@
 {
   "name": "@vue-materials-iview/filter-select",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "可直接传接口方法的远程搜索的选择框组件",
   "files": [
     "demo/",
