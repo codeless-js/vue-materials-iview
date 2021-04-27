@@ -7,6 +7,7 @@
     :loading="loading"
     v-on="$listeners"
   >
+    <slot name="option-prepend"></slot>
     <i-option
       v-for="item in optionList"
       :value="item[valueKey]"
@@ -16,6 +17,7 @@
       <slot v-bind:option="item">
         <span>{{ item[labelKey] }}</span>
       </slot>
+    <slot name="option-append"></slot>
     </i-option>
   </i-select>
 </template>
@@ -79,7 +81,7 @@ export default {
           pageNum: 1,
           ...this.apiParams,
         })
-          .then(response => {
+          .then((response) => {
             if (this.isPage) {
               this.optionList = response.data.items || [];
             } else {
