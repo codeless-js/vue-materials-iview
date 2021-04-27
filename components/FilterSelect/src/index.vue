@@ -17,8 +17,8 @@
       <slot v-bind:option="item">
         <span>{{ item[labelKey] }}</span>
       </slot>
-    <slot name="option-append"></slot>
     </i-option>
+    <slot name="option-append"></slot>
   </i-select>
 </template>
 
